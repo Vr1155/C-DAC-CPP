@@ -1,0 +1,288 @@
+
+Intro to C++
+
+Some background info on Bell labs and R&D happening there on UNIX OS.
+UC Berkeley and work on BSD operating system.
+
+C was originally developed at Bell Labs by Ritchie between 1972 and 1973,
+in order to construct utilities running on Unix. 
+It was applied to re-implementing the kernel of the Unix operating system.
+
+C++ was created by Bjarne Stroustrup in order to add more features to C.
+
+Inorder to standardize compilers, ANSI and ISO come in.
+First standard was: c99 and c++99
+
+Java comes in 1996, JVM written in C++, JVM does not get system level features.
+However, C & C++ are still used in systems level programming.
+
+6 days for C++ and 6 days for multithreading in C++ for HPC.
+
+===================================================================================
+
+Object Orientied Programming Principles:
+
+1. Abstraction
+2. Encapsulation
+3. Inheritance
+4. Polymorphism
+
+1. Abstraction -
+
+Abstraction in OOPS is used to hide unnecessary information 
+and display only necessary information to the users interacting. 
+It is essential to represent real-world objects in a simplified manner 
+for users to interact easily.
+
+2. Encapsulation -
+
+In software systems, encapsulation refers to the bundling of data 
+with the mechanisms or methods that operate on the data. 
+It may also refer to the limiting of direct access 
+to some of that data, such as an object's components. 
+Essentially, encapsulation prevents external code 
+from being concerned with the internal workings of an object.
+
+It also encourages programmers to put all the code that is 
+concerned with a certain set of data in the same class, 
+which organizes it for easy comprehension by other programmers. 
+Encapsulation is a technique that encourages decoupling.
+
+All object-oriented programming (OOP) systems support encapsulation, 
+but encapsulation is not unique to OOP. 
+Implementations of abstract data types, modules, and libraries, 
+among other systems, also offer encapsulation. 
+
+In object-oriented programming languages, and other related fields, 
+encapsulation refers to one of two related but distinct notions, 
+and sometimes to the combination thereof:
+
+	A. A language mechanism for restricting direct access to some of the object's components.
+	B. A language construct that facilitates the bundling of data with the methods 
+(or other functions) operating on those data.
+
+3. Inheritance -
+
+In object-oriented programming, inheritance is the mechanism of basing an object or class upon another object (prototype-based inheritance) or class (class-based inheritance), retaining similar implementation. 
+Also defined as deriving new classes (sub classes) from existing ones such as super class or base class and then forming them into a hierarchy of classes. 
+In most class-based object-oriented languages like C++, an object created through inheritance, a "child object", acquires all the properties and behaviors of the "parent object", with the exception of: constructors, destructors, overloaded operators and friend functions of the base class. 
+Inheritance allows programmers to create classes that are built upon existing classes, to specify a new implementation while maintaining the same behaviors (realizing an interface), to reuse code and to independently extend original software via public classes and interfaces. 
+The relationships of objects or classes through inheritance give rise to a directed acyclic graph. 
+
+4. Polymorphism - 
+
+n programming language theory and type theory, polymorphism is the use of a single symbol to represent multiple different types.
+
+In object-oriented programming, polymorphism is the provision of a single interface to entities of different types.
+The concept is borrowed from a principle in biology where an organism or species can have many different forms or stages.
+
+=======================================================================
+
+In openSUSE, you have to install gcc-c++ compiler.
+
+and compile using 
+g++ filename.cpp
+
+
+Compiler will understand following extensions as cpp programs:
+
+.c
+.cc
+.cpp 
+
+=======================================================================
+
+what are namespaces in C++?
+
+A namespace is a declarative region that provides a scope to the identifiers (the names of types, functions, variables, etc) inside it. 
+Namespaces are used to organize code into logical groups and to prevent name collisions that can occur especially when your code base includes multiple libraries. 
+
+In case you dont using "using namespace std;", 
+thenyou have to use the scope resolution operator.
+along with namespace
+for eg: std::cout << "Hello World!\n";
+
+In C++ we try to avoid global space, instead we use namespace.
+
+========================================================================
+
+Function Overloading:
+
+	Two or more functions with same name, but different signature.
+	What is signature of a function?
+		The name of function, number of arguments, type of arguments and order in which they are passed.
+		(Please note that return type has to be same.)
+
+	for Example:
+	============
+		void fun();
+
+		void fun(int);
+		void fun(double);
+		void fun(char*);
+		void fun(string);
+		void fun(float);
+		void fun(char);
+
+		void fun(int, int);
+		void fun(double, double);
+		void fun(int, double);
+		void fun(double, int);
+
+		// see "funOverloading.cpp" for implementation
+
+
+Some more info on:
+	how linker works in C.
+	Function overloading does not work in C, it gives linker error.
+	Why it does not give error in C++, even though it uses same linker? 
+	What is happening internally in compiler at linking stage that helps prevent this?
+	What is name mangling?
+
+	here's the answer:
+	using "nm a.out" to find out the symbol table of each identifier in your object file!
+	use "man nm" to know more about this command and how to read each symbol.
+	
+	fun(double) -> _Z3fund
+	fun(int) -> _Z3funi
+	fun() _Z3funv
+
+	As you can see, internally compiler is performing name mangling, 
+	name mangling is literally just changing the name of function based on their function signature.
+	This is how cpp compilers support function overloading.
+	Different compilers have different way of doing this, in visual C++, its called name decoration.
+
+	In order to support function overloading compiler performs name mangling/decoration
+	during compilation (Phase I)
+		
+=================================================================================================
+
+please note that from actual Object Oriented Programming point of view.
+
+Only function overriding is considered Polymorphism.
+which in C++ we achieve through virtual functions.
+
+In Academia, 
+we have compile time polymorphism and runtime polymorphism.
+
+However in industry,
+Only function overriding is considered as polymorphism from Object Oriented Programming point of view.
+
+==================================================================================================
+
+In C language you used...
+	char str[] = "String here";		// can be used as read and writable strings
+	char *str = "string stored like this";	// should be used as read only
+
+In C++ in addition to above, we can use:
+	string str = "Some C++ strings here";	// Here string is a class part of standard C++ library
+	
+void fun(char *str){
+	
+}
+
+fun("Fun should not be called like this");
+// compiler will give warning like:
+// warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+
+This program will compile and run, but if you try to modify it, it will give segfault.
+This is because C++ has to be backwards compatible with C.
+
+char str[] = "Some more strings here";
+fun(str);
+
+==============================================================================
+
+Getting input in C++
+
+cin >> str;
+cin.getline(str, 100);
+
+Problem:
+	Write a structre with id, name and salary.
+	Create an array of structure variable for storing 5 employee details.
+	Write functions to accept employee details and to print it.
+		acceptDetails();
+		printDetails();
+
+
+=================================================================================
+
+lvalue and rvalues
+
+lvalues are location values like a variable identifiers
+and 
+rvalues are resources like variables, constants and literals.
+
+===========================================================
+
+pass by value in C++
+
+each function has a different memory location for storing local variables.
+
+if you want a function to return multiple values 
+---> for same data type ---> return array
+---> for different data types ---> return struct
+
+However, in case of arguments, all arguments are pass by value
+If you want to change the value of arguments outside the functions as well
+you must pass arguments as pointers or references.
+
+see "callByValue.cpp" and "callByAddress.cpp"  for more info.
+
+====================================================================
+
+what are lookup tables and symbol tables?
+	mapping of variable identifiers and memory location where the value is stored.
+
+What are reference variables?
+	reference variables are essentially identifiers that
+	refer to a memory location that already has a identifier.
+	Note that reference variables do not occupy memory,
+	they only take more entries in the lookup / symbol tables.
+	
+see "callByRef.cpp" for more info.
+
+====================================================================
+
+In modern cpp we can avoid using pointers for majority of cases,
+either by using references or by using library stuff like smart pointers!
+
+===================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+day2:
+==================================================
+
+note: 
+return type is not part of function signature in C++.
+	for eg: constructors don't even have return type.
+
+Therefore, function overloading does not consist of changing return types.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

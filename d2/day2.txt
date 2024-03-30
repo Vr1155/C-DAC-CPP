@@ -7,7 +7,36 @@ return type is not part of function signature in C++.
 
 Therefore, function overloading does not consist of changing return types.
 
+==================================================
 
+Using classes with basic data structures:
+
+
+1. Using arrays
+	class Array{
+		int arr[SIZE];
+		int size;
+	public:
+		void initializeArr();
+		void fillArray(int first);
+		void printArray();
+	};
+
+2. Using Linked List
+	struct Node{
+		int data;
+		Node *next;
+	};
+
+	class LinkedList{
+		Node* first;
+	public:
+		void initialize();
+		void addAtBeg();
+		void addAtEnd();
+		void addAtPos(int);
+		void disp();
+	};
 
 
 

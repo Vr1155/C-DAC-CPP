@@ -4,6 +4,9 @@
 #define N 5
 #endif
 
+
+// using C style structures:
+
 using namespace std;
 
 struct Employees {

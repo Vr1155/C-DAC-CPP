@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// using C style structures
+
 struct Employee {
 	int id;
 	string name;

@@ -50,7 +50,8 @@ also constant objects will not allow class variables to be modified.
 Only when you use mutable with a class variable, 
 then const objects will allow modification of that variable
 	
+Using static keywords:
+---------------------
 
-
-
+static members belong to the class instead of the object.
 			

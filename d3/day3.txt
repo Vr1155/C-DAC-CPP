@@ -131,7 +131,6 @@ Dyanamic memory allocation in C++ :
 Important notes on memory allocation and deallocation:
 ------------------------------------------------------
 
-
 Two memory related problems are :-
 
 1. Memory leaks
@@ -140,6 +139,7 @@ Two memory related problems are :-
 ==================================================================
 
 1. Memory Leaks:
+----------------
 
 After allocating memory,
 if you do not use delete, that part of memory will not be freed.
@@ -163,16 +163,20 @@ https://en.wikipedia.org/wiki/Memory_leak
 
 ===================================================================
 
-
-2. Dangling pointers 
+2. Dangling pointers: 
+----------------------
 
 Pointers pointing to an object which was already deleted.
 When you try to free that pointer, you get a segfault.
 
 see for more info: "danglingptr.cpp"
 
-===================================================================
+Note: please note that double deletion does not work on OpenSUSE systems,
+but it somehow works on windows. 
 
+Try it with some other programs to demonstrate dangling pointers.
+
+===================================================================
 
 How memory allocation works in C/C++:
 
@@ -204,11 +208,11 @@ For any class in C++,
 		file where string is used as a class member.
 
 
-		For tommorow, do some reading on this topic:
+For tommorow, do some reading on this topic:
 
-		Deep copy and shallow copy...
-		=============================
+Deep copy and shallow copy...
+=============================
 
-		We will have discussion tomorrow.		
+We will have discussion tomorrow.		
 
 

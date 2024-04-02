@@ -1,0 +1,42 @@
+Day 3:
+======
+	Different types of members of a class.
+		Data Members:
+		-------------
+			Class Member:
+				One copy per class ---> using static keyword.
+
+				Object/Instance/Variable Member:
+					Each object has its own copy
+						normal data members without any keyword
+						const data members using const keyword
+						mutable data members using mutable keyword
+				
+				Let me give you an example:
+				Example: class Employee
+
+class Array{
+	int arr[SIZE];
+	const int size;
+public:
+	Array(int = 0);
+	Array(int sz, int first);
+
+	void fillArray(int first);
+	void printArray();
+};
+
+After this:
+-----------
+
+	const member functions and const objects
+	mutable and static members
+	dynamic memory allocation in C++.
+
+	Introduction to Operator overloading 
+
+	
+
+
+
+			

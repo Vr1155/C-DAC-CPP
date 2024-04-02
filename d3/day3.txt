@@ -35,6 +35,20 @@ After this:
 
 	Introduction to Operator overloading 
 
+==========================================================
+
+Discussion on const keyword:
+---------------------------
+
+refer to file "employeeThree.cpp"
+
+Using const keyword with objects:
+--------------------------------
+
+const objects will only allow constant functions to be called.
+also constant objects will not allow class variables to be modified.
+Only when you use mutable with a class variable, 
+then const objects will allow modification of that variable
 	
 
 

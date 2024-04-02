@@ -54,4 +54,109 @@ Using static keywords:
 ---------------------
 
 static members belong to the class instead of the object.
+
+static members of a class are referred to class members.
+One copy per class.
+static member functions can access only static data members of the class.
+static member functions cannot access instance members.
+
+
+Syntax for static function:
+	static returnType funName(arguments){
+	}
+
+
+Dyanamic memory allocation in C++ :
+------------------------------------
+
+	Heap based objects/variables allocated dynamically.
+	
+
+	C style:
+	--------
+		In C we used stdlib.h which has functions like malloc, calloc, realloc and free functions
+		for allocating memory dynamically.
+
+	C++ style:
+	==========
+		Remember (always) all valid C code is a C++ code! 
+		In addition to the above mentioned functions, 
+		C++ provides operators new and delete for dynamic memory allocation.
+
+		For storing individual elements (on data only):
+
+		
+		C Style:
+
+			int *iPtr = malloc(sizeof(int));	// allocate bytes in the memory.
+			*iPtr = 10;
 			
+			free(iPtr);	// for deleting or removing from the memory.
+
+		C++ Style:
+			int *iPtr = new int(10);
+
+		==============================================================
+		For collections of elements:
+		
+		C Style:
+			int size = 100;
+			int *iPtr = malloc(sizeof(int) * size);
+			or 
+			int *iPtr = calloc(sizeof(int), size);
+		
+		C++ Style:
+			int size = 100;
+			int *iPtr = new int[size];
+			delete[] iPtr;
+
+
+		Task: Create a class with dynamically allocated class variable
+			(Use constructors and destructors to allocate and deallocate such class variables).
+		Solution: see "arrayUsingDynamic.cpp"
+
+		class Array{
+			int *arr;	// a pointer variable
+			const int size;
+		public:
+			Array(int = 0);
+			Array(int sz, int first);
+
+			void fillArray(int first);
+			void printArray();
+		};
+
+================================================================
+
+Important notes on memory allocation and deallocation:
+------------------------------------------------------
+
+After allocating memory,
+if you do not use delete, that part of memory will not be freed.
+
+In programs which run indefinitely 
+(a program using infinite loop or programs in mobile devices)
+This will become a big problem as it creates memory leaks.
+
+The memory leak lasts until the system is reset (aka system is rebooted). 
+For example: if the elevator's power were turned off or in a power outage, the program would stop running. 
+When power was turned on again, the program would restart and all the memory would be available again, 
+but the slow process of memory leak would restart together with the program, 
+eventually prejudicing the correct running of the system. 
+
+use tools like valgrind to find out memory leaks 
+use command to find out where memory was not deallocated and leaks are happening:
+$valgrind ./a.out --memory-check
+
+For more info on memory leaks, see this informative wikipedia article:
+https://en.wikipedia.org/wiki/Memory_leak
+
+===================================================================
+
+
+
+
+
+
+
+

@@ -20,10 +20,10 @@ public:
 };
  
 // Here, class F is declared as a
-// friend inside class GFG. Therefore,
-// F is a friend of class GFG. Class F
+// friend inside class Target. Therefore,
+// F is a friend of class Target. Class F
 // can access the private members of
-// class GFG.
+// class Target.
 class F {
 public:
     void display(Target& t)

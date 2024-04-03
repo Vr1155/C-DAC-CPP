@@ -1,0 +1,148 @@
+	Deep copy and Shallow copy...
+	=============================
+		We will have discussion Now.
+		
+		Yesterday we discussed dangling pointers.
+		Where 2 array pointers were pointing to the same array in heap.
+		This is an example of shallow copy.
+
+		What are some ways to get rid of this problem?
+
+		1. In deep copy,
+		each pointer is pointing to their own copy of the data.
+		Basically each pointer has its own data and modification in one
+		does not reflect in other.
+		In order to deep copy data, we need to implement a copy constructor.
+
+		2. we can avoid dangling pointers by using something called shared pointer.
+		It keeps a count of how many shallow copies you make by
+		something called as reference counter.
+		Only when the reference counter becomes zero, then it deallocates
+		the object.
+
+		3. Final way to avoid dangling pointers, is to transfer ownership of 
+		that object to other reference/pointer.
+
+============================================================================
+
+Implement...
+	
+	struct Node{
+		int Node;
+		Node* next;
+		Node(int x=0);
+	};
+
+	class LinkedList{
+		Node* first;
+	public:
+		LinkedList();
+		~LinkedList();
+
+		void addAtBeg();
+		void addAtEnd();
+		void addAtPos(int);
+		void disp();
+	};
+
+
+=======================================================================		
+		
+Up Next:
+--------
+	This pointer
+	Friend functions and classes
+	Operator Overloading...
+		Introduction
+		Syntax
+			unary operators
+			binary operators
+
+-----------------------------------------------------
+
+In C++ style of using structures.
+the structure behaves like an object and functions are "inside" the structure object.
+
+On the same hand in C style structures, there is separation of data and functions. 
+Functions are declared and defined outside structure.
+Only data is inside the structure.
+
+-----------------------------------------------------
+
+Now we will use a tool created by GNU called "GIMPLE"
+
+for more info on this see: https://gcc.gnu.org/onlinedocs/gccint/GIMPLE.html
+
+You can request to dump a C-like representation 
+of the GIMPLE form with the flag -fdump-tree-gimple. 
+
+"Simple" => GNU => "GIMPLE"
+
+use command:
+$g++ -fdump-tree-gimple structEx.cpp
+
+This creates an intermediate file with gimple extension.
+
+Open that file, 
+you will notice that every constructor has an argument
+which is essentially the "this" pointer.
+
+("this" is just a pointer to the current instance/object)
+
+C++ -> C (intermediate) -> Object code -> Executable.
+
+"this" pointer is an argument to all instance member functions.
+static members do not have "this" pointer.
+
+"this" operator also helps eliminate ambiguity between,
+local variables and instance variables.
+
+since local variables of same name
+have more higher priority than instance variables and global variables.
+"this" operator helps avoid name collision.
+
+=================================================================
+
+friend functions in C++:
+------------------------
+
+Any function is a friend of a class, that function can access all
+the private and protected data members and functions, of that class.
+
+For eg see: friendOne.cpp
+
+You have to declare that friend function in the class of which you want to
+disclose private members of.
+
+As you can see, this goes against the Object Oriented Programming principles
+as main() fn is not part of Simple Class and still can access
+internal details of that Class.
+
+However, this is helpful to programmers. 
+
+For more info: https://en.wikipedia.org/wiki/Friend_function
+
+--------------------------------------------
+
+friend classes in C++:
+----------------------
+
+you can also declare an entire class as a friend class.
+That way all the instance functions of the friend class.
+Can access all the private and protected members of that class.
+
+for eg. see: friendClass.cpp
+
+For more info: https://en.wikipedia.org/wiki/Friend_class
+
+=================================================================
+
+
+
+
+
+
+
+
+
+

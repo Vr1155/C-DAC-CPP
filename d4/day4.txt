@@ -160,7 +160,32 @@ a.add(b).subtract(c).multiply(d)
 vs
 a+b-c*d
 
+=============================================================================
 
+Try overloading ++ operator...
+	--> For pre-fix notation
+		Test& operator++() { // pre-fix
+
+		}
+
+	--> for post-fix notation
+		Test operator++(int){	
+		// post-fix dummy integer to tell compiler its post-fix...
+		}
+		
+	see "moreOpOverloading.cpp" for solution.
+
+int main(){
+	Test a, b =10, c;
+
+	a = ++b;
+	a.print();	
+	b.print();
+
+	c = b++;
+	c.print();
+	b.print();
+}	
 
 
 

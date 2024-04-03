@@ -137,10 +137,28 @@ For more info: https://en.wikipedia.org/wiki/Friend_class
 
 =================================================================
 
+Operator Overloading:
+---------------------
 
+There are four operators in C++ which cannot be overloaded.
 
+1. :: (Scope resolution operating)
+2. . (Dot operator)
+3. sizeof()
+4. typeid()
 
+Every other operator in C++ can be overloaded.
 
+User Defined Data Types = Abstract Data Types.
+
+Operator overloading is adding some functionaity to operators,
+so that they can work with user defined data types.
+
+It also creates ease of understanding from readability perspective.
+for eg: 
+a.add(b).subtract(c).multiply(d)
+vs
+a+b-c*d
 
 
 

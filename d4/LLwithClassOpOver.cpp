@@ -7,6 +7,22 @@
 // (operator overloading of +).
 //
 
+/*
+Similarly, write a program to do operator overloading on "=" and "+" for Linked List.
+for eg:
+LL a = b;	// copy constructor
+a = b; 		// deep copy
+a + b;		// merge lists
+a + 10;		// add at end
+10 + a; 	// add at beginning.
+
+According to instructor, the main purpose of learning operator overloading,
+is to avoid dangling pointers by overloading the "=" operator to provide deep copy.
+Everything else is extra.
+
+*/
+
+
 #include<iostream>
 using namespace std;
 
@@ -21,12 +37,13 @@ class LL{
 
 public:
 	LL();
-	LL(LL& obj);
+	LL(const LL& obj);
 	Node* createNode(int data);
 	void addAtBeg(int data);
+	void addAtEnd(int data);
 	void printList();
 	void deleteAtBeg();
-	int isFirstNull();
+	int firstElem();
 };
 
 int main(){
@@ -59,6 +76,20 @@ void LL::addAtBeg(int data){
 	Node* ptr = createNode(data);
 	ptr->next = first;
 	first = ptr;
+}
+
+void LL::addAtEnd(int data){
+	Node* New = createNode(data);
+	if(first == nullptr){
+		first = New;
+		return;
+	}
+	Node* temp = first;
+	while(temp->next != nullptr){
+		temp = temp->next;
+	}
+	temp->next = New;
+
 }
 
 void LL::printList(){
@@ -96,11 +127,12 @@ LL::LL(){
 	this->first = nullptr;
 }
 
-LL::LL(LL& obj){ 
+// copy constructor for deep copy:
+LL::LL(const LL& obj){ 
 	cout << "copy constructor running \n";
-	Node* temp
+	Node* temp = obj.first;
 	while(temp != nullptr){
-		obj.addAtBeg(temp->data);
+		this->addAtEnd(temp->data);
 		temp = temp->next;
 	}
 }

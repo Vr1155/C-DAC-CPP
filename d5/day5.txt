@@ -1,0 +1,90 @@
+day 5:
+=======
+
+Till now we learned:
+
+OOPS, 
+Differences between C and C++, 
+namespace, 
+scope resolution operator, 
+function overloading, 
+references, 
+struct c vs c++, 
+class, c
+onstructors, 
+destructors, 
+constructor overloading, 
+copy constructors, 
+shallow copy vs deep copy, 
+const vs mutable vs static, 
+const objects, 
+friend functions,
+friend class,
+operator overloading,
+using operator overloading as class member function
+using operator overloading as friend function
+
+
+Some clarification on operator overloading in previous day:
+
+	A talk on when to use operator overloading inside class or as friend function.
+	
+	When you are using a binary operator and the left size operand is a object of a class.
+	Then you use operator overloading as a class member function.
+	the left side operand will be the "this" pointer and right side operand will be the parameter.
+	
+	However, if the left side operand is not an object of a class. 
+	Then you use operator overloading as a friend function to that class,
+	and pass operands as arguments.
+
+	Similarly, write a program to do operator overloading on "=" and "+" for Linked List.
+	for eg:
+	LL a = b;	// copy constructor
+	a = b; 		// deep copy
+	a + b;		// merge lists
+	a + 10;		// add at end
+	10 + a; 	// add at beginning.
+
+	According to instructor, the main purpose of learning operator overloading,
+	is to avoid dangling pointers by overloading the "=" operator to provide deep copy.
+	Everything else is extra.
+
+
+Today:
+
+	Inheritance and polymorphism
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

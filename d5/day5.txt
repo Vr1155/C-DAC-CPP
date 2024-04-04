@@ -49,16 +49,89 @@ Some clarification on operator overloading in previous day:
 	is to avoid dangling pointers by overloading the "=" operator to provide deep copy.
 	Everything else is extra.
 
+see:
+operatorOne.cpp
+operatorTwo.cpp
+operatorThree.cpp
+arrOperator.cpp
+
+---------------------------------------------------------------------------
+
+Function pointers:
+------------------
+
+Function callbacks are functions passed as arguments.
+In C, callbacks are implemented with function pointers.
+
+Function pointers are used frequently thoroughout C libraries.
+
+A few examples:
+
+$man qsort and $man qsort_r
+// quick sort algorithm that takes comparator function as function pointer 
+
+$man atexit
+// call certain functions when a program terminates
+
+see:
+cStyleFunCallback.cpp
+cStyleFunCallbackOne.cpp
+
+C++ provides an alternative to function pointers,
+which is operator overloading.
+
+---------------------------------------------------------------------------
+
+Functors in C++
+---------------
+
+
+Functors are classes that behave like functions 
+due to operator overloading of "()" operator.
+
+see: 
+functorOne.cpp
+functorTwo.cpp
 
 Today:
 
 	Inheritance and polymorphism
 
+==============================================================================
+
+Inheritance in C++ :
+--------------------
+
+Syntax:-
+
+class Test {
+	// parent/super/base class code
+}
+
+class NewTest :public Test{
+	// child/sub/derived class code
+}
+
+Note:
+Only protected and private members of a parent/super/base class
+are inherited by child/sub/derived class.
+
+protected members of a class are by default Only visible to
+subclasses and that class itself and no one else.
+
+see:
+inherOne.cpp
+inherTwo.cpp
+dataInherOne.cpp
+dataInherTwo.cpp
 
 
+==============================================================================
 
+Quick talk on structure padding:
 
-
+see:
+struct.c
 
 
 

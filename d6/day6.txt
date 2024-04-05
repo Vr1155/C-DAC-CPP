@@ -1,0 +1,69 @@
+continuing...
+	Inheritance and polymorphism
+
+	Exception Handling
+	IO Streams
+	Templates and STL.
+
+========================================================
+
+Inheritance is a "is a" relationship:
+
+========================================================
+
+Multiple inheritance is not real inheritance since,
+ child classes are not "specializing"
+C++ supports multiple inheritance, since it promotes reusability,
+Java does not and instead uses interfaces.
+
+==========================================================
+
+Due to multiple inheritance, there can be some ambiguities.
+Like for example when two parent classes have same function.
+This can be eliminated by using scope resolution operator.
+
+============================================================
+
+Diamond problem:
+
+		B
+	/		\
+	B1		B2
+	\		/
+		D
+
+Class D is inheriting class B twice.
+This will cause two copies of data and methods to be present inside class D.
+This is where virtual pointer comes into play.
+Virtual pointer helps us point to the same class. 
+
+
+
+==========================================================
+
+Quick talk on memory alignment and structure padding:
+
+the structure takes the largest datatype and creates blocks of that memory size,
+if other data types are small, they still fill that block
+and wasted space is padded space.
+This is done to increase read speed of structure.
+
+if all data types in struct are same, there will be no padded space,
+and all memory space in blocks gets occupied.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -133,7 +133,14 @@ Quick talk on structure padding:
 see:
 struct.c
 
+==============================================================================
 
+To be continued...
+	Inheritance and polymorphism
+
+	Exception Handling
+	IO Streams
+	Templates and STL
 
 
 

@@ -24,6 +24,11 @@ public:
     }
 };
 
+// vTables and vPointers:
+// Detailed explaination: https://www.geeksforgeeks.org/vtable-and-vptr-in-cpp/
+
+
+
 // if you are confused by this:
 // typedef void (*FPTR)(); // C style function pointer 
 // see: https://stackoverflow.com/questions/4295432/typedef-function-pointer
@@ -45,11 +50,16 @@ void funCaller(B &b){
 
     // here, functions in a class are stored in virtual table.
 
-    // virtual pointers pointing to a function entry in virtual table:
+    // typecast object reference to a long pointer
     long *vptr = (long*)(&b);
 
     // virtual table filled with virtual pointers:
     FPTR *vtbl = (FPTR*)(*vptr);
+
+    // Now each fuction in that object is stored as a function pointer in an array.
+    // At 0th index we will find the first function, 
+    // at 1st index we'll find second function and so on.
+    // we can use [] syntax like we do with arrays.
 
     // executing each function in v-table:
     vtbl[0]();

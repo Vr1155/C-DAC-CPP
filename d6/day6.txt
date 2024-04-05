@@ -65,6 +65,18 @@ Polymorphism:
 	polymorphismTwo.cpp
 	polymorphismThree.cpp
 
+
+===========================================================
+
+Concepts of vTable and vPointers:
+
+see: 
+virtualFuns.cpp
+
+for more info: 
+https://www.geeksforgeeks.org/vtable-and-vptr-in-cpp/
+
+
 ============================================================
 
 Runtime polymorphism:
@@ -116,12 +128,14 @@ Exception Handling:
 		Exceptiosn are runtime abnormal conditions/behaviour,
 		that occurs when your program is executed.
 		Example:
-			wrong input	/ files opening
+			wrong input / files opening
 
 	Handling of Exception?
 		Throwing or raising an exception is done using throw keyword.
 		Handling of exceptions is done in try{}catch() block.
 
+
+	See: arrOne.cpp
 
 
 

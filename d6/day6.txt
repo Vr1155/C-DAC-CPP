@@ -37,6 +37,8 @@ This will cause two copies of data and methods to be present inside class D.
 This is where virtual pointer comes into play.
 Virtual pointer helps us point to the same class. 
 
+Whenever, virtual keyword is used, any ambiguities are resolved at runtime.
+
 
 
 ==========================================================
@@ -51,16 +53,74 @@ This is done to increase read speed of structure.
 if all data types in struct are same, there will be no padded space,
 and all memory space in blocks gets occupied.
 
+==========================================================
 
+Polymorphism:
+-------------
 
+	overriding and virtual functions.
 
+	see: 
+	polymorphism.cpp
+	polymorphismTwo.cpp
+	polymorphismThree.cpp
 
+============================================================
 
+Runtime polymorphism:
+----------------------
 
+Function overloading is an example of compile time polymorphism.
+Function overriding is runtime polymorphism.
 
+In C++ every function in a class can be represented in a "V Table".
+and it has a virtual pointer called "vptr".
+Job of constructor is to initialize the V-Table and vptr.
+All these internal initializations at compiler level is the job of construtor.
 
+Whenever an object is created, a v-table is initialized.
+Similarly, functions are also placed in v-table with some index position
+and address.
 
+See:
+virtualFuns.cpp
 
+Any class that has pure virtual functions are called abstract classes in C++.
+
+for eg:
+			Sort 
+		/			\
+	Bubble			Quick
+
+Here, Sort class is a abstract class
+and it has a pure virtual functions with syntax:
+virtual void sort() = 0;
+
+============================================================
+
+Usage of supercomputers at C-DAC:
+
+Aerospace
+Signal processing
+Computer infrastructure support
+Isro infrastructure backend support
+
+Creating servers using raspberry pi
+
+==============================================================
+
+Exception Handling:
+--------------------
+
+	What are exceptions?
+		Exceptiosn are runtime abnormal conditions/behaviour,
+		that occurs when your program is executed.
+		Example:
+			wrong input	/ files opening
+
+	Handling of Exception?
+		Throwing or raising an exception is done using throw keyword.
+		Handling of exceptions is done in try{}catch() block.
 
 
 

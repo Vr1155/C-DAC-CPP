@@ -1,0 +1,135 @@
+Exception Safety classes/objects...
+User defined exceptions
+	heirarchy of user defined exception classes
+
+======================================================
+
+Modern C++ => C++11 onwards.
+
+======================================================
+
+creating pointer classes with wrapper classes:
+
+see:
+	exceptionSafetyOne.cpp
+	exceptionSafetyTwo.cpp
+	exceptionSafetyThree.cpp
+	exceptionSafetyTwoSol.cpp
+	exceptionSafetyPtr.cpp
+
+Notice that in any of these programs we are not solving problem 
+of dangling pointers, we are just handling allocation and deallocation
+to avoid memory leaks.
+
+these wrapper classes can be used to create:
+	1.) shared_ptr<>()
+		maintains a reference count to an object in heap
+		when reference count becomes zero
+		that memory gets deallocated.
+	2.) unique_ptr<>()
+	3.) weak_ptr<>()
+
+
+Solutions to dangling pointer:
+	1.) deep copy
+		Implemented in C++ using copy constructors and 
+		overloaded "=" operator which does deep copy.
+	2.) shared ownership 
+		Implemented in C++ using 
+		shared_ptr<>() which uses reference count
+	3.) single ownership / transfering the ownership. 
+		Implemented in C++ using 
+		unique_ptr<>() which maintains single/unique ownership.
+
+===============================================
+
+How to create r-value references?
+
+In modern C++, r-value references are also possible.
+
+example:
+
+l-value reference:
+int& ref = x;
+
+r-value reference:
+
+int&& ref = 10;
+
+int&& ref = fun();
+
+for more info: 
+https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n2027.html
+
+=====================================================
+
+Exception Safety classes/object...
+Built-in exception classes
+	There are two main categories of exception classes
+	in C++:
+
+	Logic errors:
+		are errors that can be detected by reading the code.
+		For eg: trying to divide by zero is a logic error.
+	Runtime errors:
+		are errors that cannot be detected by reading the code.
+		For eg: trying to open a file that does not exist is a runtime error.
+
+The following table shows some of the most common exception classes in C++:
+
+Class				Description
+===========================================================================
+std::logic_error		Base class for all logic errors.
+std::domain_error		Thrown when an invalid argument is passed to a function.
+std::invalid_argument		Thrown when an invalid argument is passed to a function.
+std::length_error		Thrown when an attempt is made to access 
+				an element of an array that is out of bounds.
+std::out_of_range		Thrown when an attempt is made to acces
+				an element of an array that is out of bounds.
+std::runtime_error		Base class for all runtime errors.
+std::range_error		Thrown when an attempt is made to access an element
+				of an array that is out of bounds.
+std::overflow_error		Thrown when an attempt is made to perform an arithmetic operation
+				that results in an overflow.
+std::underflow_error		Thrown when an attempt is made to perform an arithmetic operation
+				that results in an underflow.
+
+=====================================================
+
+User defined Exception classes in C++:
+	hierarchy of user defined exception classes.
+
+
+see:
+	UDExceptionOne.cpp
+	UDExceptionTwo.cpp
+	UDExceptionTwoRef.cpp
+	UDExceptionThree.cpp
+
+=====================================================
+
+IO Streams:
+
+
+
+
+
+=====================================================
+
+Templates and STL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

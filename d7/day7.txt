@@ -146,13 +146,89 @@ iosThree.cpp
 
 =====================================================
 
-Templates and STL
+Generic Programming using Templates in C++:
+-------------------------------------------
 
+Generic programming is writing code irrespective of which datatype
+we are dealing with.
+Usually we do this when algorithms is same but datatypes can be different.
+We can apply generic programming to functions as well as classes.
+for eg:
+fun(int)
+fun(float)
+fun(double)
+fun(string)
+and so on...
 
+Class which uses generic programming is called generic class.
 
+In addition to object oriented programming and functional programming,
+C++ also supports generic programming.
 
+Generic programming is implemented in
+C++ using Templates and in Java using generics.
+templates in C++ have their datatype in arguments inside <>
+for eg:
 
+template<datatype>
+void fun(datatype va){
+	// insert code here.
+}
 
+Instructor says that once you get enough experience in a company.
+You will not be coding in software, you will be managing
+other junior software engineers. 
+
+================================================================
+
+Using Templates in Class:
+
+Template classes in C++ are also called generic class.
+
+syntax:
+template<datatype T>
+class ClassName{
+	T dataIdentifier;
+public:
+	T fun(T a){
+		// insert code here
+		return a;
+	}
+}
+
+Test<int> obj(10);
+Test<double> dobj(10.123);
+
+see:
+	templateClassOne.cpp	
+	templateClassTwo.cpp
+
+===================================================================
+
+Standard Template Library (STL):
+
+Some guy from HP created a template library.
+Then Microsoft adopted it.
+
+							STL
+							|
+		-----------------------------------------------------------------
+		|											|					|
+	containers									iterators			Algorithms
+		|											|					|
+		|----> Sequence					Random access iterator []		|-sort
+		|			|----> vector		Sequential iterator ++, --		|-find
+		|			|----> list			input_iterator					|-search
+		|			|----> dequeue		output_itertor				
+		|			
+		|----> Associative
+					|
+					|----> set	---|
+					|----> map	---|- ordered collection
+					|
+					|---->unordered_set	---|
+					|---->unordered_map ---|-unordered collection
+					
 
 
 

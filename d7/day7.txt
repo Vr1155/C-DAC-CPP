@@ -110,9 +110,39 @@ see:
 
 IO Streams:
 
+There are close to 22 classes based on I/O stream.
+But instructor will discuss 8 main classes.
 
+				IOS_base
+					|
+					IOS 
+				/		\
+			istream		ostream
+				\		/
+					iostream
 
+cin is an object of istream class.
+This also handles operator overloading of ">>".
+It also has get functions like:
+get(), getline(), etc there are plenty of get function likethese.
 
+cout is an object of ostream class.
+This also handles operator overloading of "<<".
+It also has lot of put functions.
+
+From these three classes like: istream, iostream and ostream
+there are three file related classes that inherit them.
+istream		iostream	ostream
+	|			|			|
+ifstream	fstream		ofstream
+
+In this way there are 8 stream related classes.
+
+Here some examples on iostream:
+
+iosOne.cpp
+iosTwo.cpp
+iosThree.cpp
 
 =====================================================
 

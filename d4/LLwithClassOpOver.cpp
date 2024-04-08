@@ -36,14 +36,20 @@ class LL{
 	Node* first = nullptr;
 
 public:
-	LL();
-	LL(const LL& obj);
 	Node* createNode(int data);
 	void addAtBeg(int data);
 	void addAtEnd(int data);
 	void printList();
 	void deleteAtBeg();
 	int firstElem();
+	LL();
+	LL(const LL& obj);
+
+
+	void operator=(LL& robj);
+	void operator+(LL& robj);
+	void operator+(int x);
+	friend void operator+(int x, LL&robj);
 };
 
 int main(){
@@ -63,6 +69,26 @@ int main(){
 	LL n = t;
 	cout << "new list:\n";
 	n.printList();
+
+	LL other;
+	other.addAtBeg(5);
+	other.addAtBeg(15);
+	other.addAtBeg(25);
+	other.addAtBeg(35);
+	other.addAtBeg(45);
+	cout << "other List:\n";
+	other.printList();
+
+	other = t;
+
+	cout << "other List after deep copy:\n";
+	other.printList();
+
+	other + 1000;
+	other.printList();
+	2 + other;
+	other.printList();
+
 }
 
 Node* LL::createNode(int data){
@@ -136,3 +162,39 @@ LL::LL(const LL& obj){
 		temp = temp->next;
 	}
 }
+
+
+void LL::operator=(LL& robj){
+	// first delete all remaining nodes:	
+	while(this->first != nullptr){
+		deleteAtBeg();
+	}
+	// then copy all the new nodes.
+	// as you can see,
+	// logic for copying nodes is same as copy constructor:
+	cout << "deep copy running\n";
+	Node* temp = robj.first;
+	while(temp != nullptr){
+		this->addAtEnd(temp->data);
+		temp = temp->next;
+	}
+}
+
+void LL::operator+(LL& robj){
+	cout << "Merge lists running\n";
+	Node* temp = robj.first;
+	while(temp != nullptr){
+		this->addAtEnd(temp->data);
+		temp = temp->next;
+	}
+}
+
+void operator+(int x, LL& robj){
+	cout << "Add at beg overloaded + operator running\n";
+	robj.addAtBeg(x);
+}
+
+
+
+
+

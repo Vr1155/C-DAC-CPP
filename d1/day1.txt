@@ -63,18 +63,33 @@ and sometimes to the combination thereof:
 
 3. Inheritance -
 
-In object-oriented programming, inheritance is the mechanism of basing an object or class upon another object (prototype-based inheritance) or class (class-based inheritance), retaining similar implementation. 
-Also defined as deriving new classes (sub classes) from existing ones such as super class or base class and then forming them into a hierarchy of classes. 
-In most class-based object-oriented languages like C++, an object created through inheritance, a "child object", acquires all the properties and behaviors of the "parent object", with the exception of: constructors, destructors, overloaded operators and friend functions of the base class. 
-Inheritance allows programmers to create classes that are built upon existing classes, to specify a new implementation while maintaining the same behaviors (realizing an interface), to reuse code and to independently extend original software via public classes and interfaces. 
-The relationships of objects or classes through inheritance give rise to a directed acyclic graph. 
+In object-oriented programming, inheritance is the mechanism of basing an object 
+or class upon another object (prototype-based inheritance) or 
+class (class-based inheritance), retaining similar implementation. 
+Also defined as deriving new classes (sub classes) from existing ones 
+such as super class or base class and then forming them into a hierarchy of classes. 
+In most class-based object-oriented languages like C++, 
+an object created through inheritance, a "child object", 
+acquires all the properties and behaviors of the "parent object", 
+with the exception of: constructors, destructors, 
+overloaded operators and friend functions of the base class. 
+Inheritance allows programmers to create classes 
+that are built upon existing classes, to specify a new implementation 
+while maintaining the same behaviors (realizing an interface), 
+to reuse code and to independently extend original software 
+via public classes and interfaces. 
+The relationships of objects or classes through inheritance 
+give rise to a directed acyclic graph. 
 
 4. Polymorphism - 
 
-n programming language theory and type theory, polymorphism is the use of a single symbol to represent multiple different types.
+In programming language theory and type theory, 
+polymorphism is the use of a single symbol to represent multiple different types.
 
-In object-oriented programming, polymorphism is the provision of a single interface to entities of different types.
-The concept is borrowed from a principle in biology where an organism or species can have many different forms or stages.
+In object-oriented programming, 
+polymorphism is the provision of a single interface to entities of different types.
+The concept is borrowed from a principle in biology 
+where an organism or species can have many different forms or stages.
 
 =======================================================================
 
@@ -94,8 +109,11 @@ Compiler will understand following extensions as cpp programs:
 
 what are namespaces in C++?
 
-A namespace is a declarative region that provides a scope to the identifiers (the names of types, functions, variables, etc) inside it. 
-Namespaces are used to organize code into logical groups and to prevent name collisions that can occur especially when your code base includes multiple libraries. 
+A namespace is a declarative region that provides a scope to the identifiers 
+(the names of types, functions, variables, etc) inside it. 
+Namespaces are used to organize code into logical groups 
+and to prevent name collisions that can occur especially 
+when your code base includes multiple libraries. 
 
 In case you dont using "using namespace std;", 
 thenyou have to use the scope resolution operator.
@@ -110,7 +128,8 @@ Function Overloading:
 
 	Two or more functions with same name, but different signature.
 	What is signature of a function?
-		The name of function, number of arguments, type of arguments and order in which they are passed.
+		The name of function, number of arguments, 
+		type of arguments and order in which they are passed.
 		(Please note that return type has to be same.)
 
 	for Example:
@@ -150,7 +169,8 @@ Some more info on:
 	As you can see, internally compiler is performing name mangling, 
 	name mangling is literally just changing the name of function based on their function signature.
 	This is how cpp compilers support function overloading.
-	Different compilers have different way of doing this, in visual C++, its called name decoration.
+	Different compilers have different way of doing this, 
+	in visual C++, its called name decoration.
 
 	In order to support function overloading compiler performs name mangling/decoration
 	during compilation (Phase I)

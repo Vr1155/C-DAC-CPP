@@ -115,8 +115,8 @@ Namespaces are used to organize code into logical groups
 and to prevent name collisions that can occur especially 
 when your code base includes multiple libraries. 
 
-In case you dont using "using namespace std;", 
-thenyou have to use the scope resolution operator.
+In case you dont use "using namespace std;", 
+then you have to use the scope resolution operator.
 along with namespace
 for eg: std::cout << "Hello World!\n";
 
@@ -128,8 +128,8 @@ Function Overloading:
 
 	Two or more functions with same name, but different signature.
 	What is signature of a function?
-		The name of function, number of arguments, 
-		type of arguments and order in which they are passed.
+		The name of function, number of arguments/parameters, 
+		type of arguments/parameters and order in which they are passed.
 		(Please note that return type has to be same.)
 
 	for Example:
@@ -244,8 +244,10 @@ if you want a function to return multiple values
 ---> for same data type ---> return array
 ---> for different data types ---> return struct
 
-However, in case of arguments, all arguments are pass by value
-If you want to change the value of arguments outside the functions as well
+However, in case of arguments/parameters, 
+all arguments are pass by value
+If you want to change the value of arguments
+outside the functions as well
 you must pass arguments as pointers or references.
 
 see "callByValue.cpp" and "callByAddress.cpp"  for more info.
@@ -269,40 +271,3 @@ In modern cpp we can avoid using pointers for majority of cases,
 either by using references or by using library stuff like smart pointers!
 
 ===================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -4,6 +4,7 @@
 #include<iostream>
 using namespace std;
 
+// template class with a pure virtual function:
 template<typename T>
 class ISort
 {

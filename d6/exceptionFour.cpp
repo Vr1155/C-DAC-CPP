@@ -16,7 +16,9 @@ int main(){
 	createNPrintArr(10);	// runs normally
 	createNPrintArr(20);	// runs normally
 	createNPrintArr(-20);	// will throw exception
-	createNPrintArr(50);	// this line will not execute
+	createNPrintArr(50);	// this line will ALSO execute
+	// Notice that last function call also executed because,
+	// exception was handled inside the function itself.
 }
 
 void createNPrintArr(int size){

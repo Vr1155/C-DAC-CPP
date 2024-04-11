@@ -13,6 +13,7 @@ int main(){
 		cout << "Statement #1\n";
 		Test obj;
 		// destructor is immediately run before exception is thrown
+		// This is due to stack unwinding.
 		throw 10;
 		cout << "Statement #2\n";
 

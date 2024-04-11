@@ -1,9 +1,4 @@
 #include<iostream>
-
-#ifndef SIZE
-#define SIZE 50
-#endif
-
 using namespace std;
 
 class Array{

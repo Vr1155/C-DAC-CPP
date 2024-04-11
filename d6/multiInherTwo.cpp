@@ -30,4 +30,7 @@ int main(){
 	cout << "B1: "<< sizeof(B1) << endl;
 	cout << "B2: " << sizeof(B2) << endl;
 	cout << "D: " << sizeof(D) << endl;
+	
+	// note that size of a pointer is 64 bits (8 bytes) in a 64-bit system
+	// and 32 bits (4 bytes) in a 32-bit system
 }

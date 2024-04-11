@@ -105,6 +105,8 @@ see:
 	UDExceptionTwo.cpp
 	UDExceptionTwoRef.cpp
 	UDExceptionThree.cpp
+	UDExceptionFour.cpp
+	UDExceptionFive.cpp
 
 =====================================================
 
@@ -174,6 +176,14 @@ template<datatype>
 void fun(datatype va){
 	// insert code here.
 }
+
+for more info on template functions,
+see:
+templateOne.cpp
+templateTwo.cpp
+templateThree.cpp
+templateFour.cpp
+templateSort.cpp
 
 Instructor says that once you get enough experience in a company.
 You will not be coding in software, you will be managing

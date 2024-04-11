@@ -13,6 +13,10 @@ public:
     void disp();
 };
 
+// notice how we are specifying generic datatype inside <>
+// and using scope resolution operator
+// while defining a function from a template class
+// outside the class:
 template <typename T>
 void Test<T>::disp(){
     cout << "Data: " << data << endl;

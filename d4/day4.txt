@@ -12,7 +12,8 @@
 		each pointer is pointing to their own copy of the data.
 		Basically each pointer has its own data and modification in one
 		does not reflect in other.
-		In order to deep copy data, we need to implement a copy constructor.
+		In order to deep copy data, we need to implement a copy constructor and
+		implement overloading of assignment operator.
 
 		2. we can avoid dangling pointers by using something called shared pointer.
 		It keeps a count of how many shallow copies you make by
@@ -109,10 +110,10 @@ friend functions in C++:
 Any function is a friend of a class, that function can access all
 the private and protected data members and functions, of that class.
 
-For eg see: friendOne.cpp
-
 You have to declare that friend function in the class of which you want to
 disclose private members of.
+
+For eg see: friendOne.cpp
 
 As you can see, this goes against the Object Oriented Programming principles
 as main() fn is not part of Simple Class and still can access
@@ -142,7 +143,7 @@ Operator Overloading:
 
 There are four operators in C++ which cannot be overloaded.
 
-1. :: (Scope resolution operating)
+1. :: (Scope resolution operator)
 2. . (Dot operator)
 3. sizeof()
 4. typeid()

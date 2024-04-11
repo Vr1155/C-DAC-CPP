@@ -1,6 +1,10 @@
 #include<iostream>
 using namespace std;
 
+// Here two namespaces were created and we are specifying,
+// which namespace to fetch data from by using the namespace name
+// and the scope resolution operator along with identifier of variable
+
 
 namespace Mine {
 	int gVar = 100;

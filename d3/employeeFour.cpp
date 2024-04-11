@@ -37,7 +37,7 @@ int main(){
 // This is called initializer list:
 
 // Notice that you dont have to pass static variables as arguments,
-// but they are still used in initializer list:
+// but they can still be used in initializer list:
 
 Employee::Employee():id(Employee::idCounter++){
 

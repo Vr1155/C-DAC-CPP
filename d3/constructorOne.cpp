@@ -15,6 +15,6 @@ public:
 };
 
 int main(){
-	Test obj;
+	Test obj;	// default constructor
 	obj.print();
 }

@@ -15,6 +15,12 @@ Day 3:
 				Let me give you an example:
 				Example: class Employee
 
+				see:
+				employeeOne.cpp
+				employeeTwo.cpp
+				employeeThree.cpp
+				employeeFour.cpp
+
 class Array{
 	int arr[SIZE];
 	const int size;
@@ -75,7 +81,7 @@ Dyanamic memory allocation in C++ :
 	C style:
 	--------
 		In C we used stdlib.h which has functions like malloc, calloc, realloc and free functions
-		for allocating memory dynamically.
+		for allocating and deallocating memory dynamically.
 
 	C++ style:
 	==========
@@ -94,7 +100,9 @@ Dyanamic memory allocation in C++ :
 			free(iPtr);	// for deleting or removing from the memory.
 
 		C++ Style:
-			int *iPtr = new int(10);
+			int *iPtr = new int(10);	// allocate
+
+			delete iPtr;				// deallocate
 
 		==============================================================
 		For collections of elements:
@@ -171,8 +179,12 @@ When you try to free that pointer, you get a segfault.
 
 see for more info: "danglingptr.cpp"
 
-Note: please note that double deletion does not work on OpenSUSE systems,
-but it somehow works on windows. 
+Also see for more detailed info:
+https://www.geeksforgeeks.org/dangling-void-null-wild-pointers/
+
+Note: please note that double deletion in that program
+does not give error on OpenSUSE systems,
+but it somehow gives error on windows. 
 
 Try it with some other programs to demonstrate dangling pointers.
 

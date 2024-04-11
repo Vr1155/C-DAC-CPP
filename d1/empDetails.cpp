@@ -17,6 +17,9 @@ struct Employees {
 
 typedef struct Employees record;
 
+// notice the syntax on how to pass an array of any data type
+// to a function as a reference.
+// passing as reference to array of structures:
 void printDetails( record (&ptr)[N], int i);
 void acceptDetails( record (&ptr)[N], int i);
 

@@ -37,7 +37,7 @@ public:
 // typedef void (*myfunc)();   
 // |
 // V
-// myfunc f;      // compile equally as  void (*f)();
+// myfunc f;      // equivalent to void (*f)();
 
 
 using FPTR = void (*)();    // C++ style
@@ -51,12 +51,17 @@ void funCaller(B &b){
     // here, functions in a class are stored in virtual table.
 
     // typecast object reference to a long pointer
+    // (This makes it easy to store its functions in an array):
     long *vptr = (long*)(&b);
 
     // virtual table filled with virtual pointers:
     FPTR *vtbl = (FPTR*)(*vptr);
+    // if you notice *vtbl is a function pointer,
+    // which is pointing to the first address in the array of 
+    // function addresses of object b.
 
-    // Now each fuction in that object is stored as a function pointer in an array.
+    // Now each function in that object is stored as a function address in an array.
+    // and function pointer is pointing to the first address.
     // At 0th index we will find the first function, 
     // at 1st index we'll find second function and so on.
     // we can use [] syntax like we do with arrays.

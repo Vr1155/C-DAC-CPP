@@ -16,12 +16,10 @@ class Simple{
 };
 
 int main(){
-
 	// Since main() is now a friend function of Simple class,
 	// it will have access to all private data members
 	// and functions of Simple class.
 	Simple obj;
-	obj.getData(100).
+	obj.getData(100);
 	obj.printData();
-
 }

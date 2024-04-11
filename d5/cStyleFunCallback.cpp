@@ -5,6 +5,8 @@ void fun();
 void funOne();
 
 int main(){
+    // syntax of a function pointer,
+    // that takes no arguments and returns void:
     void (*fPtr)();
     fPtr = fun;
     fPtr();

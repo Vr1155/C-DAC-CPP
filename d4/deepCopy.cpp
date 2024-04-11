@@ -8,7 +8,7 @@ class Array{
 public:
 	Array(int = 0);
 	Array(int sz, int first);
-	Array(const Array&);
+	Array(const Array&);	// copy constructor does deep copy
 	~Array();
 
 	void fillArray(int first);

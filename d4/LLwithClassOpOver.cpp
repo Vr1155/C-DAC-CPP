@@ -36,19 +36,25 @@ class LL{
 	Node* first = nullptr;
 
 public:
+
+	// regular linked list functions:
 	Node* createNode(int data);
 	void addAtBeg(int data);
 	void addAtEnd(int data);
 	void printList();
 	void deleteAtBeg();
-	int firstElem();
+	
+	// default constructor:
 	LL();
+	// copy constructor:
 	LL(const LL& obj);
 
 
+	// overloaded operators for deep copy using "="
 	void operator=(LL& robj);
+	// concatenate two linked lists using overloaded "+"
 	void operator+(LL& robj);
-	// void operator+(int x);
+	// add at beginning using overloaded "+" friend function.
 	friend void operator+(int x, LL&robj);
 };
 
@@ -84,8 +90,7 @@ int main(){
 	cout << "other List after deep copy:\n";
 	other.printList();
 
-	// other + 1000;
-	// other.printList();
+	cout << "other list after adding at beginning (using operator overloading\n)";
 	2 + other;
 	other.printList();
 
@@ -142,12 +147,6 @@ void LL::deleteAtBeg(){
 	delete temp;
 }
 
-int LL::firstElem(){
-	if(first == nullptr)
-		return -1;
-	else
-		return first->data;
-}
 
 LL::LL(){
 	this->first = nullptr;

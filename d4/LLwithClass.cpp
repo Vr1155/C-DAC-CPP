@@ -1,8 +1,10 @@
 #include<iostream>
 using namespace std;
 
+// just a declaration of LL with Class:
+
 struct Node{
-	int Node;
+	int data;
 	Node* next;
 	Node(int x=0);
 };

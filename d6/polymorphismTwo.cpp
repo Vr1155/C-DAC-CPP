@@ -27,7 +27,7 @@ int main(){
     bPtr = &d;
     bPtr->fun();    // (2)
 
-    // as you can see, 
+    // as you can see in (2), 
     // despite pointing to a derived class object,
     // since the pointer is from base class,
     // it runs the base class function only.

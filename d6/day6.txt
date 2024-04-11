@@ -52,6 +52,8 @@ This is done to increase read speed of structure.
 
 if all data types in struct are same, there will be no padded space,
 and all memory space in blocks gets occupied.
+Therefore, be careful about the order of declaration of
+variables of different data types inside a structure.
 
 ==========================================================
 
@@ -117,7 +119,7 @@ Signal processing
 Computer infrastructure support
 Isro infrastructure backend support
 
-Creating servers using raspberry pi
+BTW, You can create servers using raspberry pi
 
 ==============================================================
 
@@ -125,7 +127,7 @@ Exception Handling:
 --------------------
 
 	What are exceptions?
-		Exceptiosn are runtime abnormal conditions/behaviour,
+		Exceptions are runtime abnormal conditions/behaviour,
 		that occurs when your program is executed.
 		Example:
 			wrong input / files opening

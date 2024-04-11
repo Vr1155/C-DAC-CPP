@@ -10,8 +10,8 @@ scope resolution operator,
 function overloading, 
 references, 
 struct c vs c++, 
-class, c
-onstructors, 
+class, 
+constructors, 
 destructors, 
 constructor overloading, 
 copy constructors, 
@@ -113,7 +113,7 @@ class NewTest :public Test{
 }
 
 Note:
-Only protected and private members of a parent/super/base class
+Only protected and public members of a parent/super/base class
 are inherited by child/sub/derived class.
 
 protected members of a class are by default Only visible to

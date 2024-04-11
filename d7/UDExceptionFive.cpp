@@ -39,7 +39,8 @@ int main(){
 
 		// here we can throw 3 different types of objects and all wil be caught
 		// since catch block takes base class object as argument.
-		// notice that functionality of what() will be based on what object we are throwing:
+		// notice that functionality of what() will be based on what object we are throwing,
+		// because what() in base class is a virtual function.
 
 		// throw MyException(404, "Resource not found");
 		 throw YourException(404);

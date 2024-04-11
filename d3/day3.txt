@@ -14,6 +14,12 @@ Day 3:
 				
 				Let me give you an example:
 				Example: class Employee
+				
+				see:
+				employeeOne.cpp
+				employeeTwo.cpp
+				employeeThree.cpp
+				employeeFour.cpp
 
 class Array{
 	int arr[SIZE];

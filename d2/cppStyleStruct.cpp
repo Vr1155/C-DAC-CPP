@@ -6,6 +6,9 @@ using namespace std;
 // C++ style of using structures:
 
 struct Employee {
+
+	// note that all data members and functions in struct are public by default
+
 	int id;
 	string name;
 	double salary;

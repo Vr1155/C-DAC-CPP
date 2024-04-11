@@ -48,7 +48,7 @@ public:
 
 	void operator=(LL& robj);
 	void operator+(LL& robj);
-	void operator+(int x);
+	// void operator+(int x);
 	friend void operator+(int x, LL&robj);
 };
 
@@ -84,8 +84,8 @@ int main(){
 	cout << "other List after deep copy:\n";
 	other.printList();
 
-	other + 1000;
-	other.printList();
+	// other + 1000;
+	// other.printList();
 	2 + other;
 	other.printList();
 

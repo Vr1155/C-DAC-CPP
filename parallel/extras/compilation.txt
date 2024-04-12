@@ -1,0 +1,64 @@
+			
+
+C/C++ (Phase II)
+----------------
+
+			program
+			|
+			|---> pre-processing
+			|
+			V
+			Source
+		    /   |
+	       assembly |---> compilation (declarations)
+		    \   |
+			V
+			Object file
+			|
+			|---> linking (definitions)
+			|
+			V
+			Executable
+
+
+	int x; 		// declaration
+	int x = 100;	// definition
+
+	// when you use extern keyword, its declaration only:
+	extern int x;	// declaration only
+
+	// This is because, compiler has something called:
+	// ODR = One Definition Rule.
+
+
+What is pre-processing?
+	
+	instructions to pre-processor
+		OR
+	preprocessor directives
+
+	in C/C++ any statements starting with "#" is a preprocessor directive.
+	in line: "#include <stdio.h>",
+	include is the directive and stdio.h is the argument.
+
+	what include does is include the contents of header file into our current program.
+	please note that <> is for system headers and "" is for user defined headers.
+
+	Other pre-processor directives:
+	
+	#define
+	#ifndef
+	#if
+	#ifndef
+	#else
+	#endif
+
+
+
+
+
+
+
+
+
+

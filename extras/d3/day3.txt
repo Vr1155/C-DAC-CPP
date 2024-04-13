@@ -63,6 +63,19 @@ Parallelism:
 	see:
 	"makefileprevBatchVars"
 	
+	Instructor shows a production ready project with following folders:
+
+	make -> contains make files
+	lib -> archives or object files
+	docs -> documentation
+	src -> source files
+	bin -> binary executable
+	include -> header files
+
+	
+	$(wildcard $(SRC_DIR)/*c)
+
+
 
 =============================================================================
 

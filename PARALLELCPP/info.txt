@@ -1,1 +1,54 @@
 Parallel programming in C++
+
+	We know what is multi-threading...
+	see:
+	multiOne.cpp
+	multiTwo.cpp
+	multiThree.cpp
+	multiFour.cpp
+	multiFive.cpp
+	
+===========================================================	
+
+	Intro to lambda functions in C++:
+	
+		In modern C++ (aka C++11 onwards).. allows C++ to,
+		anonymous functions or functional objects (functors)
+		which can be used inline or passed as an argument
+		to a function.
+
+		The syntax is:
+			[](){}
+
+		[] -> capture block
+		() -> arguments/parameters
+		{} -> code
+
+		so basically:
+			[capture](arguments){
+				code
+			}
+
+
+		see:
+		lambdaOne.cpp
+		lambdaTwo.cpp
+		lambdaThree.cpp
+		lambdaCapture.cpp
+		lambdaCaptureOne.cpp
+		lambdaThread.cpp
+
+================================================================================
+
+	Pending topics:
+
+		Instructor says that rest will be covered along with 
+		parallel programming with python either at beginning or end of
+		those modules.
+
+		These two libraries will be discussed:
+
+		MPI ---> Message Passing Interface for parallel programming
+		PASL ---> Parallel Algorithm Scheduling Library
+	
+

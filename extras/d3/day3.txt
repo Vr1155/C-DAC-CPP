@@ -1,0 +1,69 @@
+Parallelism:
+============
+
+	Build Process:
+	==============
+		Your compilation process. i.e., 
+		from your program to executable file.
+
+		We can automate this process using 
+		an utility(command) called make.
+
+		You have to specify to make (command) 
+		by giving instructions/script.
+
+		"make" command searches for file with name
+		"makefile" or "Makefile" in your current working directory.
+
+		This is how "make" helps you automate your build process.
+		Also note that if you make any changes in your files,
+		make will only recompile files that have been changed
+		if there are no changes it will say that your
+		executable file name is up to date.
+
+	
+		Similary you can create your own projects with makefiles
+		structure them accordingly as per discussion in previous sessions.
+
+=======================================================================================
+
+	Instructor shows previous batches makefiles.
+
+	What are make variables?
+
+	1. var:= values
+		Here, ":=" means that, variable is evaluated only once
+		 at the time of assignment.
+	2. var = values
+		Here, "=" means that, variable is evaluated each time 
+		variable var is used and changes every time values are changed.
+		
+	Pre-defined variables:
+	
+		$@ -> replaced by name of target
+		$< -> replaced by the first pre-requisite/dependency/source
+		$^ -> replaced by names of all the pre-requisites/dependencies/sources
+
+	Examples:
+	 	
+		// for a makefile with only one pre-requisite:
+		listExe: filename.o
+			gcc -o $@ $<
+
+		// creating variables for options:
+		CFLAGS := -I .		// for gcc compiler
+		CXXFLAGS := -I .	// for g++ compiler
+
+		// for a makefile with multiple pre-requisite:
+		listExe: addAtBeg.o allocMem.o dispList.o mainTest.o
+			gcc -o $@ $^
+
+
+	Inorder to understand how to use make variables in a makefile
+	see:
+	"makefileprevBatchVars"
+	
+
+=============================================================================
+
+Up next: Multi-threading using C++

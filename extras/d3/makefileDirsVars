@@ -1,0 +1,31 @@
+# Instructor's previous year's code for creating makefiles with 
+# directories as makefile variables
+# this allows you to avoid writing full directory path to the files as
+# you have to maintain a folder structure for production grade code.
+
+SRC_DIR = ../src
+OBJ_DIR = ../lib
+INC_DIR = ../include
+BIN_DIR = ../bin
+
+CFLAGS := -I $(INC_DIR)
+CC = gcc
+
+SOURCES = $(wildcard $(SRC_DIR)/*.c)
+OBJECTS = $(SOURCES:$(SRC_DIR)/%.c=$(OBJ_DIR)%.o)
+EXECUTABLE = $(BIN_DIR)/listExe
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+clean:
+	rm $(OBJ_DIR)/*.o $(EXECUTABLE)
+
+
+
+
+
+

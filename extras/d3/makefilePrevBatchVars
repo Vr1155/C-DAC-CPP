@@ -20,7 +20,18 @@ CFLAGS := -I .
 CXXFLAGS := -I .
 
 CC := gcc
-SOURCES := addAtBeg.c allocMem.c dispList.c mainTest.c
+
+# we can create variables for all files like this:
+#SOURCES := addAtBeg.c allocMem.c dispList.c mainTest.c
+# or we can simply use wildcard like "*":
+
+SOURCES = $(wildcard *.c)	# only change here
+
+# notice that this will help create a variable for all files listed above.
+# and its syntax is much more concise as you dont have to list all files by name
+# as there could be more than hundred files that might need to be listed.
+
+# concise way to create a variable with all object files:
 OBJECTS := $(SOURCES:.c=.o)
 EXECUTABLE := listExe
 

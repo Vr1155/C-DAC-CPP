@@ -1,0 +1,109 @@
+Revision on Parallel Programming:
+
+Parallel Computing, parallel processing or multiprocesssing is to enable 
+or perform multiple tasks/programs to run simultaneously on multiple processors.
+
+What we tend to do is by splitting a single task into multiple independent smaller or sub-tasks. 
+Where each sub-tasks is nothing but set of instructions which 
+can run simultaneously on different processors.
+
+====================================================================================
+
+
+race conditions..
+
+	If the variable is one which is shared...
+		each increment operation is not a single operation...
+			read data
+			add operation
+			assign to data
+
+		there is something called atomic operation...
+			that is if you start performing any operation,
+			you complete the whole operation in one go.
+
+		C++ provides class for atomic operations
+			for eg:
+			atmoic<int> &counter;
+
+====================================================================================
+			
+
+mutexes and semaphores:
+	
+	in C++ we have the following mutexes:
+
+		-> unique_lock (with regular mutex)
+		-> lock_guard
+		-> rlock
+		-> unique_lock (with timed mutex)
+
+	to maintain consistency and integrity of shared data while multithreading.
+	
+====================================================================================
+
+	
+MPI ---> Message Passsing Interface.
+		is a library specification for message passing,
+		which is a way/method of parallel processing an app/program by dividing the work
+		between multiple - processors.
+
+		MPI is one of the widely used standard for parallel programming.
+
+		This library defines set of functions that can be used to
+		send and recieve message/data between processors as well as manage the 
+		parallel running or execution of program.
+		MPI library is available in C, C++, FORTRAN, Python...
+
+		Some of the widely used MPI library.
+			Intel MPI Library
+				is maintained by Intel which is optimized for Intel based processors.
+				support available for windows, UNIX, Linux, macOS platforms.
+			Open MPI
+				Open Source MPI library ...
+				support available for windows, UNIX, Linux, macOS platforms.
+			MPICH
+				Open Source MPI library ...
+				support available for windows, unix, linux, macos platforms.
+			Boost.MPI
+				Open Source MPI library ...
+				Boost is a collection of C++ libraries ...
+				They also provide their version of MPI, 		
+				support available for windows, unix, linux, macos platforms.
+		header file:	
+		#include <mpi>
+
+		for compiling:
+			g++ filename ...
+			or 
+			mpic++ or mpiCC
+
+		for running ...
+			mpirun on Linux 
+			mpiexec on Windows
+
+		in main ...
+			MPI_Init() ;
+				to start the MPI code ...
+			
+			MPI_Finalize();
+				before ending the code ...
+
+			MPI_Comm_rank(MPI_COMM_WORLD, &rank);	// rank of your processor
+
+
+====================================================================================
+
+PASL ---> Parallel Algorithm Scheduling Library.
+
+		PASL is a C++ library that allows programmars to write parallel programs.
+		Its is based on fork-join parallelism model.
+
+		$ cd pasl/example
+
+		Then, build the binary for the source file, which is named 'fib.cpp'.
+		
+		Instructor was referring to this github repository:
+		https://github.com/deepsea-inria/pasl	
+	
+	

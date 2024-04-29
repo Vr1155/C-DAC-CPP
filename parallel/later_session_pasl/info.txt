@@ -1,0 +1,50 @@
+PASL -->
+	Parallel Algorithm Scheduling Library
+
+		Here are some useful links:
+
+		https://github.com/deepsea-inria/pasl
+		
+		https://www.cs.cmu.edu/afs/cs/academic/class/15210-f18/www/pasl.html
+
+		https://www.cs.cmu.edu/afs/cs/academic/class/15210-s15/www/lectures/pasl.html
+
+		http://deepsea.inria.fr/pasl/
+
+		-------------------------------------------
+
+		IMPORTANT NOTE not mentioned in the documentation:
+
+		In PASL library, there are the following functions:
+		launch(), init(), run(), output() and destroy().		
+
+		The call to `launch` creates an instance of the PASL runtime
+		and then runs a few given functions in order. 
+		Specifically, the call to launch calls our local functions in order:
+	
+			init(); run(); output(); destroy();
+
+		Each of these functions are allowed to call internal PASL
+		functions, such as `fork2`. Note, however, that it is not safe to call 
+		such PASL library functions outside of the PASL environment.
+
+		After the calls to the local functions all complete, 
+		the PASL runtime reports among other things, the execution time of the call `run();`.	
+
+		--------------------------------------------
+
+		// inorder to run the fib.cpp example:
+
+		$make fib.opt
+
+		// run fib.opt for 45th term by using processors with processor IDs 0,1,2,3.
+		$./fib.opt -n 45 -proc 0,1,2,3
+
+		--------------------------------------------
+
+
+		instructors says that only multithreading and multiprogramming from python and C++
+		will be asked in exam.
+
+ 		MPI, parsl and PASL will not be asked in exam unless C-DAC forces them to.
+
